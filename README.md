@@ -1,3 +1,4 @@
+![Angular - Sockets](https://i.imgur.com/yMnndlN.jpg)
 # Socket server
 Reconstruir node modules
 ```
