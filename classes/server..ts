@@ -5,6 +5,8 @@ import http from 'http';
 
 export default class Server{
 
+    private static _instance: Server;
+
     public app: express.Application;
     public port: number;
 
@@ -12,7 +14,7 @@ export default class Server{
     private httpServer: http.Server;
 
 
-    constructor(){
+    private constructor(){
         this.app = express();
         this.port = SERVER_PORT;
 
@@ -25,6 +27,11 @@ export default class Server{
         });
 
         this.escucharSockets();
+    }
+
+    // Patron singleton para no tener dos instancias de socket
+    public static get instance(){
+        return this._instance || (this._instance = new this());
     }
 
     private escucharSockets(){
