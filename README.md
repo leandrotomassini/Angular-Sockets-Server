@@ -1,2 +1,16 @@
-# Angular-Scokets
-Sockets, express, servicios rest, git, github, CORS, gráficas, google maps, typescript, tareas, ejercicios y más
+# Socket server
+Reconstruir node modules
+```
+npm install
+```
+
+Generar el DIST
+```
+tsc -w
+```
+
+Levantar servidor con cualquiera de estos dos comandos
+```
+nodemon dist/
+node dist/
+```
