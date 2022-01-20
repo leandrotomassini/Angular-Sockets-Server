@@ -43,6 +43,10 @@ export default class Server{
             
             console.log(`Cliente conectado ${cliente.id}`);
             
+
+            // Mensajes
+            socket.mensaje(cliente);
+
             //  Desconectar
             socket.desconectar(cliente);
         });
