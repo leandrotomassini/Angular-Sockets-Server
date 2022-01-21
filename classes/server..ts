@@ -45,7 +45,7 @@ export default class Server{
             
 
             // Mensajes
-            socket.mensaje(cliente);
+            socket.mensaje(cliente, this.io);
 
             //  Desconectar
             socket.desconectar(cliente);
