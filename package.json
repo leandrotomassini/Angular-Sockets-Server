@@ -4,7 +4,8 @@
   "description": "![Angular - Sockets](https://i.imgur.com/yMnndlN.jpg)\r # Socket server\r Reconstruir node modules\r ```\r npm install\r ```",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon dist/"
+    "start:dev": "nodemon dist/",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
