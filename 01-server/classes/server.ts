@@ -4,6 +4,8 @@ import express from 'express';
 import socketIO from 'socket.io';
 import http from 'http';
 
+import * as socket from '../sockets/socket';
+
 import { SERVER_PORT } from '../global/enviroment';
 
 
@@ -30,6 +32,8 @@ export default class Server {
         this.io = new socketIO.Server(this.httpServer,
             { cors: { origin: true, credentials: true } }
         );
+
+        this.escucharSockets();
     }
 
     // Sockets patron singleton
@@ -45,11 +49,22 @@ export default class Server {
 
     // Sockets
     private escucharSockets() {
+
         console.log(`Esuchando conexiones - Sockets.`);
 
         this.io.on('connection', cliente => {
+
             console.log('Cliente conectado.');
+
+            // Mensajes
+            socket.mensaje(cliente, this.io);
+
+            // Desconectar
+            socket.desconectar(cliente);
+
         });
+
+
     }
 
 }
